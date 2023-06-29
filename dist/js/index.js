@@ -1,13 +1,15 @@
-const endpoints = 'https://www.themealdb.com/api/json/v1/1/categories.php'
+export const BASE_URL = `https://www.themealdb.com/api/json/v1/1`
+
 const drawerMenu = document.querySelector('.categories-wrapper')
 const openDrawer = document.querySelector('.nav-links')
 const openBar = document.querySelector('.nav-bars')
 const closeDrawer = document.querySelector('.close')
 const listCategories = document.querySelector('.categories-body')
+const gridCategories = document.querySelector('.category-grid')
 
 const getData = async () => {
   try {
-    const { data } = await axios.get(endpoints)
+    const { data } = await axios.get(`${BASE_URL}/categories.php`)
     return data.categories
   } catch (error) {
     console.log(error)
@@ -26,8 +28,16 @@ const closeDrawerMenu = () => {
 
 const main = async () => {
   const res = await getData()
-  console.log(res)
+
   res.forEach((item) => {
+    const divElement = document.createElement('div')
+    divElement.classList.add('box-food')
+    divElement.style.backgroundImage = `url('${item.strCategoryThumb}')`
+
+    const spanElement = document.createElement('span')
+    spanElement.classList.add('box-food-label')
+    spanElement.innerText = item.strCategory
+
     const liElement = document.createElement('li')
     liElement.classList.add('categories-body-item')
 
@@ -36,6 +46,8 @@ const main = async () => {
 
     liElement.appendChild(aElement)
     listCategories.appendChild(liElement)
+    divElement.appendChild(spanElement)
+    gridCategories.appendChild(divElement)
   })
 
   openBar.addEventListener('click', openDrawerMenu)

@@ -21,7 +21,7 @@
       rel="stylesheet" />
     <!-- Axios CDN -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <title>Category Food</title>
+    <title>Categories</title>
   </head>
   <body>
     <!-- NAVBAR -->
@@ -50,13 +50,20 @@
     <div class="hero">
       <div class="container">
         <h1 class="hero-title">Recipes Food</h1>
-        <i class="fa-solid fa-chevron-down hero-cta animation"></i>
+        <a href="#category">
+          <i class="fa-solid fa-chevron-down hero-cta animation"></i>
+        </a>
       </div>
     </div>
     <!-- END HERO -->
     <main>
-      <section></section>
+      <section id="category">
+        <div class="container">
+          <h1>Categories</h1>
+          <div class="category-grid"></div>
+        </div>
+      </section>
     </main>
-    <script src="./dist/js/index.js"></script>
+    <script type="module" src="./dist/js/index.js"></script>
   </body>
 </html>

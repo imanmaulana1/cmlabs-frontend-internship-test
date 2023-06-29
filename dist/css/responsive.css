@@ -31,6 +31,21 @@
   .hero-cta {
     font-size: 42px;
   }
+
+  #category {
+    background-color: #121212;
+    color: #fff;
+    padding: 12% 5%;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .box-food {
+    height: 130px;
+    background-repeat: no-repeat;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -65,6 +80,20 @@
   .hero-cta {
     font-size: 42px;
   }
+
+  #category {
+    background-color: #121212;
+    color: #fff;
+    padding: 12% 5%;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .box-food {
+    height: 130px;
+  }
 }
 
 /* Mobile */
@@ -92,6 +121,20 @@
 
   .hero-cta {
     font-size: 32px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .box-food {
+    height: 100px;
+    background-repeat: no-repeat;
+  }
+
+  .box-food-label {
+    width: 30%;
+    font-size: 0.8rem;
   }
 }
 
