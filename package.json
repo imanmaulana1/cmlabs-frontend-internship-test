@@ -1,0 +1,19 @@
+{
+  "name": "tes-cmslabs-frontend",
+  "version": "1.0.0",
+  "description": "test frontend internship",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imanmaulana1/cmlabs-frontend-internship-test.git"
+  },
+  "author": "Iman Maulana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imanmaulana1/cmlabs-frontend-internship-test/issues"
+  },
+  "homepage": "https://github.com/imanmaulana1/cmlabs-frontend-internship-test#readme"
+}

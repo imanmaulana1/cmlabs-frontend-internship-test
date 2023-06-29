@@ -1,23 +1,128 @@
-/* 1440px */
-@media screen and (max-width: 1440px) {
+/* Tablet */
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-bars {
+    display: block !important;
+  }
+
+  .nav .categories-wrapper {
+    width: 50%;
+  }
+
+  .categories-header-icon {
+    font-size: 2rem;
+  }
+
+  .categories-body-item {
+    padding: 10px 0;
+  }
+
+  .categories-body .categories-body-item:hover:before {
+    left: -5%;
+  }
+
+  .hero-title {
+    font-size: 100px;
+  }
+
+  .hero-cta {
+    font-size: 42px;
+  }
 }
 
-/* 1280px */
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-bars {
+    display: block !important;
+  }
+
+  .nav .categories-wrapper {
+    width: 50%;
+  }
+
+  .categories-header-icon {
+    font-size: 2rem;
+  }
+
+  .categories-body-item {
+    padding: 10px 0;
+  }
+
+  .categories-body .categories-body-item:hover:before {
+    left: -8%;
+  }
+
+  .hero-title {
+    font-size: 100px;
+  }
+
+  .hero-cta {
+    font-size: 42px;
+  }
 }
 
-/* 960px */
-@media screen and (max-width: 960px) {
-}
-
-/* 840px */
-@media screen and (max-width: 840px) {
-}
-
-/* 600px */
+/* Mobile */
 @media screen and (max-width: 600px) {
+  .nav-brands {
+    font-size: 30px;
+  }
+
+  .nav-bars {
+    font-size: 27px;
+  }
+
+  .nav .categories-wrapper {
+    width: 100%;
+    border-radius: 0%;
+  }
+
+  .categories-body-item {
+    padding: 5px 0;
+  }
+
+  .hero-title {
+    font-size: 72px;
+  }
+
+  .hero-cta {
+    font-size: 32px;
+  }
 }
 
-/* 480px */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 320px) {
+  .nav-brands {
+    font-size: 25px;
+  }
+
+  .nav-bars {
+    font-size: 22px;
+  }
+
+  .nav .categories-wrapper.show {
+    transform: translateX(0);
+    overflow-y: scroll;
+  }
+
+  .categories-header-icon {
+    font-size: 1.5rem;
+  }
+
+  .categories-body {
+    margin-top: 0;
+    padding: 20px;
+  }
+
+  .hero-title {
+    font-size: 55px;
+  }
+
+  .hero-cta {
+    font-size: 25px;
+  }
 }

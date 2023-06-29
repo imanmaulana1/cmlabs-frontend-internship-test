@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -26,7 +26,7 @@ body {
 }
 
 .nav-brands {
-  font-size: 42px;
+  font-size: 35px;
 }
 
 .nav-links {
@@ -41,6 +41,79 @@ body {
 
 .nav-links-icon {
   margin-left: 10px;
+}
+
+.nav-bars {
+  display: none !important;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.nav .categories-wrapper {
+  width: 30%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  border-top-left-radius: 5%;
+  border-bottom-left-radius: 5%;
+  color: #fff;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: all 0.4s ease-in;
+  z-index: 999;
+}
+
+.nav .categories-wrapper.show {
+  transform: translateX(0);
+}
+
+.categories-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.categories-header-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.categories-body {
+  margin-top: 5%;
+  padding: 20px;
+}
+
+.categories-body-item {
+  list-style-type: none;
+  padding: 5px 0;
+  position: relative;
+}
+
+.categories-body-item a {
+  display: block;
+  color: #8f8f8f;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.categories-body .categories-body-item a:hover {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.categories-body .categories-body-item:hover:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -5%;
+  width: 5px;
+  height: 100%;
+  background-color: orange;
 }
 
 .hero {
@@ -64,17 +137,18 @@ body {
   color: #fff;
   font-family: 'Moon Dance', cursive;
   font-size: 150px;
-  font-family: 600;
+  font-weight: 600;
 }
 
 .hero-cta {
   color: #fff;
   font-size: 52px;
   cursor: pointer;
-  animation: up-down 0.3s infinite alternate;
-  transition: all 0.4s linear;
 }
 
+.hero-cta.animation {
+  animation: up-down 0.3s infinite alternate;
+}
 
 @keyframes up-down {
   0% {
