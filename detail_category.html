@@ -26,7 +26,7 @@
       integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"></script>
-    <title>Categories</title>
+    <title>Detail Category</title>
   </head>
   <body>
     <!-- NAVBAR -->
@@ -51,24 +51,24 @@
       </div>
     </nav>
     <!-- END NAVBAR -->
-    <!-- HERO -->
-    <div class="hero">
-      <div class="container">
-        <h1 class="hero-title">Recipes Food</h1>
-        <a href="#category">
-          <i class="fa-solid fa-chevron-down hero-cta animation"></i>
-        </a>
-      </div>
-    </div>
-    <!-- END HERO -->
     <main>
-      <section id="category">
+      <section class="detail-category">
         <div class="container">
-          <h1>Categories</h1>
-          <div class="category-grid"></div>
+          <div class="detail-category-breadcumb">
+            <a href="./category.html">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="#">Food</a>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <h1 class="detail-category-title"></h1>
+          <p class="detail-category-description"></p>
+          <div class="detail-category-grid"></div>
         </div>
       </section>
     </main>
-    <script type="module" src="./dist/js/app.js"></script>
+    <script type="module" src="./dist/js/detail_category.js"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" href="#" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./dist/css/style.css" />
     <link rel="stylesheet" href="./dist/css/responsive.css" />
@@ -26,7 +26,7 @@
       integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"></script>
-    <title>Categories</title>
+    <title>Detail Meal</title>
   </head>
   <body>
     <!-- NAVBAR -->
@@ -51,24 +51,40 @@
       </div>
     </nav>
     <!-- END NAVBAR -->
-    <!-- HERO -->
-    <div class="hero">
-      <div class="container">
-        <h1 class="hero-title">Recipes Food</h1>
-        <a href="#category">
-          <i class="fa-solid fa-chevron-down hero-cta animation"></i>
-        </a>
-      </div>
-    </div>
-    <!-- END HERO -->
     <main>
-      <section id="category">
+      <section class="detail-category">
         <div class="container">
-          <h1>Categories</h1>
-          <div class="category-grid"></div>
+          <div class="detail-category-breadcumb">
+            <a href="./category.html">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="#">Food</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="detail_category.html" class="breadcumb-category"></a>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <h1 class="detail-category-title"></h1>
+          <h3 class="detail-category-subtitle"></h3>
+          <div class="detail-meal">
+            <img alt="meal" class="detail-meal-image" />
+            <div class="detail-meal-recipe">
+              <div class="detail-meal-recipe-instruction">
+                <h3>Instruction</h3>
+                <p class="detail-meal-instruction"></p>
+              </div>
+              <div class="detail-meal-recipe-ingredient">
+                <h3>Recipes</h3>
+                <ul class="recipe-item"></ul>
+              </div>
+            </div>
+          </div>
+          <h1 class="detail-meal-tutorial">Tutorials</h1>
+          <iframe class="detail-meail-video"> </iframe>
         </div>
       </section>
     </main>
-    <script type="module" src="./dist/js/app.js"></script>
+    <script type="module" src="./dist/js/detail_meal.js"></script>
   </body>
 </html>

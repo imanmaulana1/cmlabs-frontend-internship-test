@@ -1,68 +1,73 @@
-export const BASE_URL = `https://www.themealdb.com/api/json/v1/1`
-
-const drawerMenu = document.querySelector('.categories-wrapper')
-const openDrawer = document.querySelector('.nav-links')
-const openBar = document.querySelector('.nav-bars')
-const closeDrawer = document.querySelector('.close')
-const listCategories = document.querySelector('.categories-body')
-const gridCategories = document.querySelector('.category-grid')
-
-export const getData = async () => {
-  try {
-    const { data } = await axios.get(`${BASE_URL}/categories.php`)
-    return data.categories
-  } catch (error) {
-    console.log(error)
-  }
-}
-
-const openDrawerMenu = () => {
-  drawerMenu.classList.add('show')
-  document.querySelector('.hero-cta').classList.remove('animation')
+export const openDrawerMenu = () => {
+  document.querySelector('.categories-wrapper').classList.add('show')
+  document.querySelector('.hero-cta')
+    ? document.querySelector('.hero-cta').classList.remove('animation')
+    : null
   document.querySelector('body').style.overflow = 'hidden'
 }
 
-const closeDrawerMenu = () => {
-  drawerMenu.classList.remove('show')
-  document.querySelector('.hero-cta').classList.add('animation')
+export const closeDrawerMenu = () => {
+  document.querySelector('.categories-wrapper').classList.remove('show')
+  document.querySelector('.hero-cta')
+    ? document.querySelector('.hero-cta').classList.add('animation')
+    : null
   document.querySelector('body').style.overflow = 'auto'
 }
 
-const main = async () => {
-  const res = await getData()
+export const listSideBar = (nameCategory) => {
+  const liElement = document.createElement('li')
+  liElement.classList.add('categories-body-item')
 
-  res.forEach((item) => {
-    const liElement = document.createElement('li')
-    liElement.classList.add('categories-body-item')
-
-    const aElement = document.createElement('a')
-    aElement.innerText = item.strCategory
-    aElement.href = './detail_category.html'
-    aElement.addEventListener('click', () => {
-      localStorage.setItem('categoryName', item.strCategory)
-    })
-
-    const divElement = document.createElement('div')
-    divElement.classList.add('box-food')
-    divElement.style.backgroundImage = `url('${item.strCategoryThumb}')`
-    divElement.addEventListener('click', () => {
-      localStorage.setItem('categoryName', item.strCategory)
-      window.location.href = './detail_category.html'
-    })
-
-    const spanElement = document.createElement('span')
-    spanElement.classList.add('box-food-label')
-    spanElement.innerText = item.strCategory
-
-    liElement.appendChild(aElement)
-    listCategories.appendChild(liElement)
-    divElement.appendChild(spanElement)
-    gridCategories?.appendChild(divElement)
+  const aElement = document.createElement('a')
+  aElement.innerText = nameCategory
+  aElement.href = './detail_category.html'
+  aElement.addEventListener('click', () => {
+    localStorage.setItem('categoryName', nameCategory)
   })
 
-  openBar.addEventListener('click', openDrawerMenu)
-  openDrawer.addEventListener('click', openDrawerMenu)
-  closeDrawer.addEventListener('click', closeDrawerMenu)
+  liElement.appendChild(aElement)
+  document.querySelector('.categories-body').appendChild(liElement)
 }
 
-main()
+export const gridImageCategories = (nameCategory, imageCategory) => {
+  const divElement = document.createElement('div')
+  divElement.classList.add('box-food')
+  divElement.style.backgroundImage = `url('${imageCategory}')`
+  divElement.addEventListener('click', () => {
+    localStorage.setItem('categoryName', nameCategory)
+    window.location.href = './detail_category.html'
+  })
+
+  const spanElement = document.createElement('span')
+  spanElement.classList.add('box-food-label')
+  spanElement.innerText = nameCategory
+
+  divElement.appendChild(spanElement)
+  document.querySelector('.category-grid')?.appendChild(divElement)
+}
+
+export const gridImagesFilterCategory = (
+  nameFilterCategory,
+  imageFilterCategory,
+  idMeal,
+) => {
+  const boxWrapper = document.createElement('div')
+  boxWrapper.classList.add('box-detail-food-wrapper')
+
+  const divElement = document.createElement('div')
+  divElement.classList.add('box-detail-food')
+  divElement.style.backgroundImage = `url('${imageFilterCategory}')`
+  divElement.addEventListener('click', () => {
+    localStorage.setItem('foodName', nameFilterCategory)
+    localStorage.setItem('idFood', idMeal)
+    window.location.href = './detail_meal.html'
+  })
+
+  const spanElement = document.createElement('span')
+  spanElement.classList.add('label-detail-food')
+  spanElement.innerText = nameFilterCategory
+
+  divElement.appendChild(spanElement)
+  boxWrapper.appendChild(divElement)
+  document.querySelector('.detail-category-grid').appendChild(boxWrapper)
+}
