@@ -4,7 +4,8 @@
   "description": "test frontend internship",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "npx live-server --entry-file=category.html"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/imanmaulana1/cmlabs-frontend-internship-test/issues"
   },
-  "homepage": "https://github.com/imanmaulana1/cmlabs-frontend-internship-test#readme"
+  "homepage": "https://github.com/imanmaulana1/cmlabs-frontend-internship-test#readme",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
 }
